@@ -1,0 +1,55 @@
+
+<swiper indicator-dots="true" autoplay="true" class="banner">
+  <swiper-item>
+    <image src="http://silence.heraldstudio.com/pic/cover/01.JPG" bindtap="showPhotos" id="0"/>
+  </swiper-item>
+  <swiper-item>
+    <image src="http://silence.heraldstudio.com/pic/cover/02.JPG" bindtap="showPhotos" id="1"/>
+  </swiper-item>
+  <swiper-item>
+    <image src="http://silence.heraldstudio.com/pic/cover/03.JPG" bindtap="showPhotos" id="2"/>
+  </swiper-item>
+</swiper>
+
+<view>
+  <view class="member-header">
+    <text>团队成员</text>
+    <image wx:if="{{showMember}}" class="arrow" src="/img/icon/arrow-down.png" bindtap="showMember"/>
+    <image wx:else class="arrow" src="/img/icon/arrow-left.png" bindtap="showMember"/>
+  </view>
+
+  <view wx:if="{{showMember}}">
+    <view wx:for="{{member}}" class="member-content">
+      <block wx:if="{{!item.showThought}}">
+        <view>
+          <image class="avatar" src="{{item.avatar}}"/>
+        </view>
+        <view class="member-detail">
+          <text>{{item.name}}</text>
+          <text class="info">{{item.info}}</text>
+        </view>
+        <view style="height:150rpx;" bindtap="showThought" id="{{item.id}}">
+          <image class="arrow-member"src="/img/icon/arrow-left.png" />
+        </view>
+      </block>
+
+      <view wx:else class="member-thought">
+        <text class="thought-detail">{{item.thought}}</text>
+        <view style="height:150rpx;" bindtap="showThought" id="{{item.id}}">
+          <image class="arrow-member"src="/img/icon/arrow-down.png"/>
+        </view>
+      </view>
+    </view> 
+  </view>
+</view>
+
+<view wx:for="{{posts}}" id="{{item.id}}" class="article" bindtap="showDetail">
+  <text class="title">{{item.title}}</text>
+  <image src="{{item.cover}}" />
+  <text class="intro">{{item.intro}}</text>
+</view>
+
+<view class="footer">
+  <text>© 2017 东南大学“苏之韵”社会实践小组</text>
+  <button size="mini" plain="true" bindtap="contactus">联系我们</button>
+</view>

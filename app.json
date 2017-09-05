@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main/main",
+    "pages/detail/detail",
+    "pages/photo/photo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#b3d4db",
+    "navigationBarTitleText": "苏之韵",
+    "navigationBarTextStyle": "black"
+  }
+}

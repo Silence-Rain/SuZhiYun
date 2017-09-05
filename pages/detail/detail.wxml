@@ -1,0 +1,5 @@
+<image class="cover" src="{{current.cover}}" />
+<view class="article">
+  <text class="title">{{current.title}}</text>
+  <text class="content">{{current.detail}}</text>
+</view>
